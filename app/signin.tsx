@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { router } from 'expo-router';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { useSession } from '@/app/ctx';
 
 export default function SignInScreen() {
+  const { signIn } = useSession();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Sign In.</Text>
@@ -12,6 +18,7 @@ export default function SignInScreen() {
         placeholderTextColor="#999"
         style={styles.input}
         keyboardType="email-address"
+        onChangeText={setEmail}
       />
 
       <TextInput
@@ -19,13 +26,23 @@ export default function SignInScreen() {
         placeholderTextColor="#999"
         style={styles.input}
         secureTextEntry
+        onChangeText={setPassword}
       />
 
-      <TouchableOpacity style={styles.forgotPassword}>
+      <TouchableOpacity style={styles.forgotPassword} onPress={() => {
+        router.replace('/forgot_password');
+      }}>
         <Text style={styles.forgotPasswordText}>Forget Password?</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.signInButton}>
+      <TouchableOpacity style={styles.signInButton} onPress={async () => {
+        try {
+          await signIn(email, password);
+          router.replace('/');
+        } catch (error) {
+          console.warn('Sign-in failed:', error);
+        }
+      }}>
         <Text style={styles.signInButtonText}>SIGN IN</Text>
       </TouchableOpacity>
 
@@ -49,7 +66,9 @@ export default function SignInScreen() {
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity style={styles.signUpContainer}>
+      <TouchableOpacity style={styles.signUpContainer} onPress={() => {
+                  router.replace('/signup')
+                }}>
         <Text style={styles.signUpText}>
           Don’t Have An Account? <Text style={styles.signUpLink}>Sign Up Here</Text>
         </Text>

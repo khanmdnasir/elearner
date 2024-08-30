@@ -1,0 +1,82 @@
+[
+  {
+    "id": "1",
+    "title": "Icon Design",
+    "instructor": "Tom Cruise",
+    "duration": 70,
+    "progress": 70,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4sCpEpJoLQHoqlPbukYNWmGfrSMOa0OG0Gg&s"
+  },
+  {
+    "id": "2",
+    "title": "Wireframes",
+    "instructor": "John Watson",
+    "duration": 30,
+    "progress": 30,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4sCpEpJoLQHoqlPbukYNWmGfrSMOa0OG0Gg&s"
+  },
+  {
+    "id": "3",
+    "title": "App Design",
+    "instructor": "Kim Salena",
+    "duration": 90,
+    "progress": 90,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4sCpEpJoLQHoqlPbukYNWmGfrSMOa0OG0Gg&s"
+  },
+  {
+    "id": "4",
+    "title": "UI UX Design",
+    "instructor": "Taylor Swift",
+    "duration": 45,
+    "progress": 45,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4sCpEpJoLQHoqlPbukYNWmGfrSMOa0OG0Gg&s"
+  },
+  {
+    "id": "5",
+    "title": "Prototyping",
+    "instructor": "Emma Watson",
+    "duration": 60,
+    "progress": 60,
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": "6",
+    "title": "User Research",
+    "instructor": "Robert Downey Jr.",
+    "duration": 80,
+    "progress": 80,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4sCpEpJoLQHoqlPbukYNWmGfrSMOa0OG0Gg&s"
+  },
+  {
+    "id": "7",
+    "title": "Design Systems",
+    "instructor": "Jennifer Lawrence",
+    "duration": 50,
+    "progress": 50,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4sCpEpJoLQHoqlPbukYNWmGfrSMOa0OG0Gg&s"
+  },
+  {
+    "id": "8",
+    "title": "Interaction Design",
+    "instructor": "Chris Evans",
+    "duration": 85,
+    "progress": 85,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4sCpEpJoLQHoqlPbukYNWmGfrSMOa0OG0Gg&s"
+  },
+  {
+    "id": "9",
+    "title": "Visual Design",
+    "instructor": "Scarlett Johansson",
+    "duration": 40,
+    "progress": 40,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4sCpEpJoLQHoqlPbukYNWmGfrSMOa0OG0Gg&s"
+  },
+  {
+    "id": "10",
+    "title": "Front-End Development",
+    "instructor": "Mark Ruffalo",
+    "duration": 75,
+    "progress": 75,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4sCpEpJoLQHoqlPbukYNWmGfrSMOa0OG0Gg&s"
+  }
+]
