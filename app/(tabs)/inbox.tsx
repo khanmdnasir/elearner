@@ -1,4 +1,4 @@
-import { Stack } from 'expo-router';
+import CustomHeader from '@/components/CustomHeader';
 import React from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -10,27 +10,37 @@ const DATA = Array(6).fill({
 });
 
 const ChatScreen = () => {
-  
+  const renderItem = ({ item }: any) => (
+    <TouchableOpacity style={styles.chatItem}>
+      <View style={styles.avatar} />
+      <View style={styles.chatContent}>
+        <Text style={styles.name}>{item.name}</Text>
+        <Text style={styles.message}>{item.message}</Text>
+      </View>
+      <Text style={styles.time}>{item.time}</Text>
+    </TouchableOpacity>
+  );
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <CustomHeader title='Inbox'/>
       <View style={styles.header}>
         <TextInput style={styles.searchInput} placeholder="Search Here" />
       </View>
       <View style={styles.tabContainer}>
-        <TouchableOpacity style={styles.tab}>
-          <Text style={styles.tabText}>Chat</Text>
+        <TouchableOpacity style={styles.chatTab}>
+          <Text style={styles.chatTabText}>Chat</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.tab}>
           <Text style={styles.tabText}>Calls</Text>
         </TouchableOpacity>
       </View>
-      {/* <FlatList
+      <FlatList
         data={DATA}
         renderItem={renderItem}
         keyExtractor={(item, index) => index.toString()}
-      /> */}
-    </View>
+      />
+    </SafeAreaView>
   );
 };
 
@@ -41,28 +51,44 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   header: {
-    marginBottom: 16,
+    marginVertical: 16,
   },
   searchInput: {
     borderWidth: 1,
     borderColor: '#ccc',
-    borderRadius: 8,
-    padding: 8,
+    borderRadius: 15,
+    padding: 15,
   },
   tabContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 16,
+    
+  },
+  chatTab: {
+    flex: 1,
+    padding: 12,
+    alignItems: 'center',
+    backgroundColor: '#BA68C8',
+    borderRadius: 15,
+    marginHorizontal: 5
+  },
+  chatTabText: {
+    fontWeight: '500',
+    color: '#fff',
+    fontSize: 18
   },
   tab: {
     flex: 1,
     padding: 12,
     alignItems: 'center',
-    backgroundColor: '#f0f0f0',
-    borderRadius: 8,
+    backgroundColor: '#F2E1F3',
+    borderRadius: 15,
+    marginHorizontal: 5
   },
   tabText: {
-    fontWeight: 'bold',
+    fontWeight: '500',
+    fontSize: 18
   },
   chatItem: {
     flexDirection: 'row',

@@ -1,7 +1,11 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-    container: {
+  safeArea: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  container: {
     flex: 1,
     backgroundColor: '#fff',
     paddingHorizontal: 16,
@@ -10,7 +14,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: 10,
+    marginVertical: 10,
   },
   welcomeText: {
     fontSize: 24,
@@ -28,38 +32,41 @@ const styles = StyleSheet.create({
     marginHorizontal: 8,
   },
   searchInput: {
-    height: 40,
+    height: 50,
     borderColor: '#ddd',
     borderWidth: 1,
-    borderRadius: 8,
+    borderRadius: 15,
     paddingHorizontal: 8,
-    marginTop: 16,
   },
   categoryScroll: {
     marginTop: 16,
   },
   categoryButton: {
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#ffff',
     paddingVertical: 8,
     paddingHorizontal: 16,
     borderRadius: 20,
     marginHorizontal: 8,
+    borderWidth: 1,
+    borderColor: '#C6D0D7'
   },
   categoryText: {
-    color: '#A020F0',
+    color: 'black',
+    fontWeight: '500'
   },
   sectionHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     marginTop: 24,
+    marginBottom: 10
   },
   sectionTitle: {
     fontSize: 18,
     fontWeight: 'bold',
   },
   seeAllButton: {
-    color: '#A020F0',
+    color: '#8D8989',
   },
 });
 

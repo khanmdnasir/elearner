@@ -1,35 +1,44 @@
 import { Link } from "expo-router";
-import { View, StyleSheet, Text, Image } from "react-native";
+import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
 
+export const CourseItem = ({ item }: any) => {
 
-export const CourseItem = ({ item }: any) => (
-  <Link href={{ pathname: '/[course_details]', params: item.id}}>
-    <View style={styles.courseContainer}>
-      <Image source={{ uri: item.image }} style={styles.courseImage} />
-      <Text style={styles.courseTitle}>{item.title}</Text>
-      <Text style={styles.courseInstructor}>By {item.instructor}</Text>
-      <Text style={styles.progressLabel}>{item.progress}% DONE</Text>
-      <View style={styles.progressBarContainer}>
-        <View style={[styles.progressBar, { width: `${item.progress}%` }]} />
+  return (
+    <Link href={{ pathname: '/courses/[id]', params: item.id}}>
+      <View style={styles.courseContainer}>
+        <Image source={{ uri: item.image }} style={styles.courseImage} />
+        <View style={{display: 'flex', flexDirection: 'row', marginTop: 8, alignItems: 'center', justifyContent: 'space-between'}}>
+          <Text style={styles.courseTitle}>{item.title}</Text>
+          <Text style={styles.ratingText}>★★★★★</Text>
+        </View>
+        <Text style={styles.courseInstructor}>By {item.instructor}</Text>
+        <Text style={styles.progressLabel}>{item.progress}% DONE</Text>
+        <View style={styles.progressBarContainer}>
+          <View style={[styles.progressBar, { width: `${item.progress}%` }]} />
+        </View>
       </View>
-    </View>
-  </Link>
-);
+    </Link>
+  );
+};
 
 const styles = StyleSheet.create({
-    courseContainer: {
+  courseContainer: {
     width: 160,
     marginRight: 16,
   },
   courseImage: {
     width: '100%',
-    height: 100,
+    height: 180,
     borderRadius: 8,
+    resizeMode: 'cover'
   },
   courseTitle: {
     fontSize: 14,
     fontWeight: 'bold',
-    marginTop: 8,
+  },
+  ratingText: {
+    fontSize: 8,
+    color: '#1445F6',
   },
   courseInstructor: {
     fontSize: 12,
@@ -51,4 +60,4 @@ const styles = StyleSheet.create({
     backgroundColor: '#A020F0',
     borderRadius: 4,
   },
-})
+});

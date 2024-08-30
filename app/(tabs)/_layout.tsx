@@ -1,19 +1,19 @@
-import { Tabs, Redirect} from 'expo-router';
+import { useSession } from '@/app/ctx';
+import { Redirect, Tabs} from 'expo-router';
 import React from 'react';
-// import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-// import { useColorScheme } from '@/hooks/useColorScheme';
-import { Text, Image, TouchableOpacity } from 'react-native';
-import { useSession } from '@/ctx';
+import { Image, Text } from 'react-native';
 
 export default function TabLayout() {
-  const { session, isLoading } = useSession();
-
+  const { isLoading, session } = useSession();
+  // You can keep the splash screen open, or render a loading screen like we do here.
   if (isLoading) {
     return <Text>Loading...</Text>;
   }
 
+  // Only require authentication within the (app) group's layout as users
+  // need to be able to access the (auth) group and sign in again.
   if (!session) {
-    return <Redirect href="/join" />;
+    return <Redirect href={{pathname: '/signin'}} />;
   }
 
   return (
@@ -39,7 +39,7 @@ export default function TabLayout() {
           ),
         }}
       />
-      <Tabs.Screen
+      {/* <Tabs.Screen
         name="inbox"
         options={{
           headerShown: true,
@@ -54,14 +54,23 @@ export default function TabLayout() {
             />
           ),
         }}
-      />
+      /> */}
       <Tabs.Screen
-        name="Courses"
+        name="inbox"
         options={{
-          headerShown: true,
-          headerTitle: 'My Courses',
-          headerTitleStyle: { fontWeight: 'bold' },
-          headerTitleAlign: 'left',
+          headerShown: false,
+          tabBarShowLabel: false,
+          tabBarIcon: ({ color }) => (
+            <Image 
+              source={require('@/assets/images/tabs/inbox.png')}
+              style={{ width: 24, height: 24, tintColor: color }}
+            />
+          ),
+        }}
+      /> 
+      <Tabs.Screen
+        name="courses"
+        options={{
           tabBarShowLabel: false,
           tabBarIcon: ({ color }) => (
             <Image 
@@ -74,10 +83,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="profile"
         options={{
-          headerShown: true,
-          headerTitle: 'Profile',
-          headerTitleStyle: { fontWeight: 'bold' },
-          headerTitleAlign: 'left',
+          headerShown: false,
           tabBarShowLabel: false,
           tabBarIcon: ({ color }) => (
             <Image 

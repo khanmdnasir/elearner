@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { router } from 'expo-router';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
-import { useSession } from '@/ctx';
+import { useSession } from '@/app/ctx';
 
 export default function SignInScreen() {
   const { signIn } = useSession();
