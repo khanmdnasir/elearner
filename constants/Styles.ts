@@ -1,14 +1,12 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const { height, width } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
   container: {
-    flex: 1,
     backgroundColor: '#fff',
     paddingHorizontal: 16,
+    paddingBottom: 60
   },
   header: {
     flexDirection: 'row',
@@ -41,24 +39,11 @@ const styles = StyleSheet.create({
   categoryScroll: {
     marginTop: 16,
   },
-  categoryButton: {
-    backgroundColor: '#ffff',
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    borderRadius: 20,
-    marginHorizontal: 8,
-    borderWidth: 1,
-    borderColor: '#C6D0D7'
-  },
-  categoryText: {
-    color: 'black',
-    fontWeight: '500'
-  },
   sectionHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: 24,
+    marginTop: 15,
     marginBottom: 10
   },
   sectionTitle: {

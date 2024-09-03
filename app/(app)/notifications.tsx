@@ -1,7 +1,9 @@
 import CustomHeader from '@/components/CustomHeader';
 import { Ionicons } from '@expo/vector-icons';
+import { router } from 'expo-router';
 import React from 'react';
-import { View, Text, Image, ScrollView, StyleSheet, SafeAreaView } from 'react-native';
+import { View, Text, Image, ScrollView, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const NotificationScreen = () => {
   const notifications = [
@@ -59,10 +61,10 @@ const NotificationScreen = () => {
     <SafeAreaView style={styles.safeArea}>
       <ScrollView style={styles.container}>
         <View style={styles.header}>
-            <CustomHeader title='Settings'/>
+            <CustomHeader title='Notifications'/>
             <View style={styles.iconContainer}>
-            <Ionicons name="settings-outline" size={24} color="black" style={styles.icon} />
-            <Ionicons name="notifications-outline" size={24} color="black" style={styles.icon} />
+            <Ionicons name="settings-outline" size={24} color="black" style={styles.icon} onPress={()=> router.navigate('/(app)/settings')}/>
+            <Ionicons name="notifications-outline" size={24} color="black" style={styles.icon} onPress={()=> router.navigate('/(app)/notifications')}/>
             </View>
         </View>
 

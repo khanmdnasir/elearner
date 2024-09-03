@@ -21,7 +21,8 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.nk97.elearner"
+      "package": "com.nk97.elearner",
+      "permissions": ["INTERNET"]
     },
     "web": {
       "bundler": "metro",

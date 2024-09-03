@@ -27,17 +27,17 @@ export default function CourseDetails() {
     <ScrollView style={styles.container}>
       <SafeAreaView>
         <VideoHeader />
-        <View style={styles.tabsContainer}>
-          {['Overview', 'Lessons', 'Reviews'].map((tab) => (
-            <TouchableOpacity
-              key={tab}
-              style={[styles.tabButton, selectedTab === tab && styles.activeTabButton]}
-              onPress={() => setSelectedTab(tab)}
-            >
-              <Text style={selectedTab === tab ? styles.activeTabText : styles.tabText}>{tab}</Text>
-            </TouchableOpacity>
-          ))}
-        </View>
+<ScrollView horizontal={true} showsHorizontalScrollIndicator={false} >
+          <TouchableOpacity >
+            <Text >UI/UX</Text>
+          </TouchableOpacity>
+          <TouchableOpacity >
+            <Text >Website Design</Text>
+          </TouchableOpacity>
+          <TouchableOpacity >
+            <Text >Figma</Text>
+          </TouchableOpacity>
+        </ScrollView>
         {renderContent()}
         <TouchableOpacity  style={styles.enrollButton} onPress={()=> router.navigate('/(app)/enroll_overview')}>
           <Text style={styles.enrollButtonText}>GET ENROLL</Text>

@@ -9,7 +9,7 @@ const { width } = Dimensions.get('window');
 export const CourseCard = (course: any) => {
 
     return (
-        <Link href={{ pathname:'/courses/[id]', params: course.course.id}}>
+        <Link href={{ pathname:'/courses/[id]', params: course.course.id}} style={{marginBottom: 15}}>
             <View style={styles.courseCard} key={course.course.id}>
                 <Image 
                     source={require('@/assets/images/course_details.png')} // Replace with your back icon image
@@ -38,7 +38,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#F2E1F3',
         borderRadius: 10,
         padding: 15,
-        marginBottom: 15,
         shadowColor: '#D9D9D9',
         shadowOffset: { width: 0, height: 1 },
         shadowOpacity: 0.2,
@@ -46,15 +45,16 @@ const styles = StyleSheet.create({
         elevation: 3,
         display: "flex",
         flexDirection: "row",
+        width: width*0.9
     },
     courseImage: {
-        width: width*0.3, // Adjust size as needed
+        width: ((width*0.9) / 100)*30, // Adjust size as needed
         height: 100,// Adjust size as needed
         borderRadius: 10,
         resizeMode: 'cover'
     },
     courseDetails: {
-        width: width*0.5,
+        width: ((width*0.9)/100)*50,
         marginLeft: 20,
         display: 'flex'
     },

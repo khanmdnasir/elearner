@@ -1,5 +1,7 @@
 import { Link } from "expo-router";
-import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Text, Image, Dimensions } from "react-native";
+
+const { height, width } = Dimensions.get('window');
 
 export const CourseItem = ({ item }: any) => {
 
@@ -23,14 +25,14 @@ export const CourseItem = ({ item }: any) => {
 
 const styles = StyleSheet.create({
   courseContainer: {
-    width: 160,
-    marginRight: 16,
+    width: 170,
+    paddingRight: 15,
   },
   courseImage: {
     width: '100%',
-    height: 180,
+    height: 170,
     borderRadius: 8,
-    resizeMode: 'cover'
+    resizeMode: 'cover',
   },
   courseTitle: {
     fontSize: 14,

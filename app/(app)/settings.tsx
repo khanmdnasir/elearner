@@ -36,15 +36,15 @@ const SettingsScreen = () => {
       <View style={styles.header}>
         <CustomHeader title='Settings'/>
         <View style={styles.iconContainer}>
-          <Ionicons name="settings-outline" size={24} color="black" style={styles.icon} />
-          <Ionicons name="notifications-outline" size={24} color="black" style={styles.icon} />
+          <Ionicons name="settings-outline" size={24} color="black" style={styles.icon} onPress={()=> router.navigate('/(app)/settings')}/>
+            <Ionicons name="notifications-outline" size={24} color="black" style={styles.icon} onPress={()=> router.navigate('/(app)/notifications')}/>
         </View>
       </View>
 
       <View style={styles.menuContainerWrapper}>
         <View style={styles.profileContainer}>
             <Image
-            source={require('@/assets/images/profile_image.png')} // Replace with actual image URL
+            source={require('@/assets/images/profile_image.jpg')} // Replace with actual image URL
             style={styles.profileImage}
             />
         </View>
